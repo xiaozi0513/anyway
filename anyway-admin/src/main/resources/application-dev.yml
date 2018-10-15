@@ -1,6 +1,10 @@
 server:
   port: 8002
 
+logging:
+  level:
+    com.anyway.admin.dao: debug
+
 eureka:
   client:
     service-url:

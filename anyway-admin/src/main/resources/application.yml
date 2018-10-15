@@ -3,3 +3,13 @@ spring:
     active: dev
   application:
     name: anyway-admin-${spring.profiles.active}
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.anyway.admin.model.domain
+  configuration:
+    map-underscore-to-camel-case: true #下划线转驼峰
+
+#分页插件
+pagehelper:
+  helper-dialect: mysql
