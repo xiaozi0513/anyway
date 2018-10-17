@@ -5,6 +5,8 @@ import com.anyway.admin.model.convert.UserConvert;
 import com.anyway.admin.model.domain.UserDO;
 import com.anyway.admin.model.dto.UserDTO;
 import com.anyway.admin.service.UserService;
+import com.anyway.common.constant.CodeEnum;
+import com.anyway.common.exception.AwException;
 import com.anyway.common.util.Query;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -42,6 +44,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void save(UserDTO user) {
+        if (userMapper.selectByUsername(user.getUsername()) != null) {
+            throw new AwException(CodeEnum.USER_EXIST.getCode(), CodeEnum.USER_EXIST.getMessage());
+        }
         UserDO userDO = UserConvert.MAPPER.dto2do(user);
         userDO.setPassword("11111111");// TODO: 2018/10/10 加密
         userMapper.insert(userDO);

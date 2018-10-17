@@ -1,5 +1,6 @@
 package com.anyway.admin.controller;
 
+import com.anyway.admin.core.annotation.LogEvent;
 import com.anyway.admin.model.dto.UserDTO;
 import com.anyway.admin.service.UserService;
 import com.anyway.common.constant.CodeEnum;
@@ -20,6 +21,7 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
+    @LogEvent
     @RequestMapping(value = "/login")
     public R login(String username, String password) {
         UserDTO userDTO = userService.selectByUsername(username);

@@ -21,7 +21,11 @@ public enum CodeEnum {
     /**
      * 密码错误
      */
-    PWD_ERROR(5002, "密码错误");
+    PWD_ERROR(5002, "密码错误"),
+    /**
+     * 用户已存在
+     */
+    USER_EXIST(5003, "用户已存在");
 
     private int code;
     private String message;

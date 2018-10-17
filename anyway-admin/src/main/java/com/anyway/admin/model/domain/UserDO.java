@@ -33,7 +33,7 @@ public class UserDO implements Serializable {
     /**
      * 性别
      */
-    private int gender;
+    private Integer gender;
 
     /**
      * 联系电话
@@ -43,12 +43,12 @@ public class UserDO implements Serializable {
     /**
      * 排序值
      */
-    private long order;
+    private Long order;
 
     /**
      * 状态
      */
-    private int status;
+    private Integer status;
 
     /**
      * 创建时间

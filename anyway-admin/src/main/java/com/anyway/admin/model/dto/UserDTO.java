@@ -37,7 +37,7 @@ public class UserDTO implements Serializable {
     /**
      * 性别
      */
-    private int gender;
+    private Integer gender;
 
     /**
      * 联系电话
@@ -47,10 +47,10 @@ public class UserDTO implements Serializable {
     /**
      * 排序值
      */
-    private long order;
+    private Long order;
 
     /**
      * 状态
      */
-    private int status;
+    private Integer status;
 }

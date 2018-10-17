@@ -23,14 +23,14 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `aw_cust`;
 CREATE TABLE `aw_cust` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '客户ID',
-  `cust_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '' COMMENT '客户姓名',
-  `phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '' COMMENT '手机号',
+  `cust_name` varchar(100) CHARACTER SET utf8mb4 NOT NULL DEFAULT '' COMMENT '客户姓名',
+  `phone` varchar(20) CHARACTER SET utf8mb4 DEFAULT '' COMMENT '手机号',
   `gender` tinyint(1) DEFAULT '0' COMMENT '性别（0-未知，1-男，2-女）',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
-  `remark` varchar(4000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT '' COMMENT '备注',
+  `remark` varchar(4000) CHARACTER SET utf8mb4 DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of aw_cust
@@ -65,7 +65,7 @@ CREATE TABLE `sys_menu` (
   `order_num` int(11) NOT NULL COMMENT '排序',
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态  0-无效，1-有效',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of sys_menu
@@ -89,7 +89,7 @@ CREATE TABLE `sys_user` (
   `status` tinyint(1) NOT NULL DEFAULT '0' COMMENT '状态（0-正常，1-封禁）',
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of sys_user

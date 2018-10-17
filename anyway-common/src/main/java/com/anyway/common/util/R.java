@@ -12,6 +12,7 @@ import java.util.HashMap;
  */
 public class R extends HashMap<String, Object> {
     private static final long serialVersionUID = -5323060105516606885L;
+
     public static final String CODE = "code";
     public static final String MESSAGE = "message";
 
