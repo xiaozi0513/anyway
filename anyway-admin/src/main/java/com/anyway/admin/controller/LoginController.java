@@ -26,11 +26,9 @@ public class LoginController {
     public R login(String username, String password) {
         UserDTO userDTO = userService.selectByUsername(username);
         if (userDTO == null) {
-            log.error("user [{}] is not exist.", username);
             return R.error(CodeEnum.USER_NO_EXIST.getCode(), CodeEnum.USER_NO_EXIST.getMessage());
         }
         if (!userDTO.getPassword().equals(password)) {
-            log.error("password of user [{}] is not correct.", username);
             return R.error(CodeEnum.PWD_ERROR.getCode(), CodeEnum.PWD_ERROR.getMessage());
         }
         return R.ok();

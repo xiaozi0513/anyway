@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="INFO" strict="true" monitorInterval="30">
+<Configuration status="OFF" monitorInterval="30">
     <Properties>
-        <Property name="logPath">log/dev</Property>
-        <Property name="logPattern">%d %highlight{%-5level} [%t] %blue{%logger{36}} - %msg%n</Property>
+        <Property name="logPath">./log/dev</Property>
+        <Property name="logPattern">%d %highlight{%-5level} [%t] %blue{%logger{36} %L} - %msg%n</Property>
     </Properties>
 
     <Appenders>
         <!--控制台输出-->
-        <Appender type="Console" name="STDOUT">
-            <Target>SYSTEM_OUT</Target>
-            <Layout></Layout>
-        </Appender>
+        <Console name="CONSOLE" target="SYSTEM_OUT">
+            <PatternLayout pattern="${logPattern}"/>
+        </Console>
 
         <!--输出到文件-->
-        <RollingRandomAccessFile name="FILE_ERROR" filename="${logPath}/error.log" filepattern="${logPath}/%d{YYYYMMdd}-%i-error.log.zip">
+        <RollingRandomAccessFile name="FILE_ERROR" filename="${logPath}/error.log"
+                                 filepattern="${logPath}/%d{YYYYMMdd}-%i-error.log.zip">
             <ThresholdFilter level="ERROR"/>
             <PatternLayout pattern="${logPattern}"/>
             <Policies>
@@ -24,5 +24,19 @@
             </Policies>
             <DefaultRolloverStrategy max="20"/>
         </RollingRandomAccessFile>
+
     </Appenders>
+
+    <Loggers>
+        <Logger name="com.netflix" level="INFO"/>
+        <Logger name="org.apache" level="INFO"/>
+        <Logger name="org.hibernate" level="INFO"/>
+        <Logger name="org.mybatis" level="INFO"/>
+        <Logger name="org.springframework" level="INFO"/>
+
+        <Root level="DEBUG">
+            <AppenderRef ref="CONSOLE"/>
+        </Root>
+    </Loggers>
+
 </Configuration>
