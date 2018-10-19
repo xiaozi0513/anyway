@@ -1,0 +1,51 @@
+server:
+  port: 10000
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: anyway-center-${spring.profiles.active}
+
+---
+
+spring:
+  profiles: dev
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:10000/eureka
+
+---
+
+spring:
+  profiles: test
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:10000/eureka
+
+
+---
+
+spring:
+  profiles: prod
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://localhost:10000/eureka
