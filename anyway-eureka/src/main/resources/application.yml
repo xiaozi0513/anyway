@@ -5,7 +5,7 @@ spring:
   profiles:
     active: dev
   application:
-    name: anyway-center-${spring.profiles.active}
+    name: anyway-eureka-${spring.profiles.active}
 
 ---
 
@@ -38,6 +38,11 @@ eureka:
 
 ---
 
+# 生产环境建议多台集群配置
+
+server:
+  port: 8761
+
 spring:
   profiles: prod
 
@@ -45,7 +50,8 @@ eureka:
   instance:
     hostname: localhost
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    register-with-eureka: true
+    fetch-registry: true
     service-url:
-      defaultZone: http://localhost:10000/eureka
+      defaultZone: http://localhost:8762/eureka
+

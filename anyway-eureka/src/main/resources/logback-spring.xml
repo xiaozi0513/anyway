@@ -100,7 +100,13 @@
         </root>
     </springProfile>
 
-    <springProfile name="prod">
+    <springProfile name="prod1">
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="prod2">
         <root level="INFO">
             <appender-ref ref="STDOUT"/>
         </root>
