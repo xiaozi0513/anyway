@@ -2,7 +2,13 @@ spring:
   profiles:
     active: dev
   application:
-    name: anyway-admin-${spring.profiles.active}
+    name: anyway-admin
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml

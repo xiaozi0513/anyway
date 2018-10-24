@@ -5,7 +5,8 @@ server:
     min-spare-threads: 10
     max-threads: 200
 
-#logging:
+logging:
+  path: ./log/anyway-admin-start.log
 #  config: classpath:conf/log4j2-dev.xml
 
 eureka:

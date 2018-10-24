@@ -5,17 +5,53 @@ spring:
   profiles:
     active: dev
   application:
-    name: cloud-gateway-${spring.profiles.active}
+    name: anyway-gateway
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
+#      discovery:
+#        locator:
+#          enabled: true
+      default-filters:
+        - Elapsed=true
+      routes:
+        - id: anyway-admin
+          uri: lb://ANYWAY-ADMIN
+          order: 0
+          predicates:
+            - Path=/anyway-admin/**
+          filters:
+            - StripPrefix=1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
 
 ---
 
 spring:
   profiles: dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka/
+
+---
+
+spring:
+  profiles: test
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.175:10000/eureka/
+
+---
+
+spring:
+  profiles: prod
 
 eureka:
   client:

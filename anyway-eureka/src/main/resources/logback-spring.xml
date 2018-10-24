@@ -22,7 +22,7 @@
             <level>DEBUG</level>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_PATH}/debug/%d{yyyy-MM-dd,aux}/anyway-admin.log.%d{yyyyMMddHH}.%i</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/debug/%d{yyyy-MM-dd,aux}/anyway-eureka.log.%d{yyyyMMddHH}.%i</fileNamePattern>
             <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
             <maxHistory>48</maxHistory><!--按小时，2天-->
         </rollingPolicy>
@@ -36,7 +36,7 @@
             <level>INFO</level>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_PATH}/info/%d{yyyy-MM-dd,aux}/anyway-admin.log.%d{yyyyMMddHH}.%i</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/info/%d{yyyy-MM-dd,aux}/anyway-eureka.log.%d{yyyyMMddHH}.%i</fileNamePattern>
             <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
             <maxHistory>48</maxHistory><!--按小时，2天-->
         </rollingPolicy>
@@ -52,7 +52,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_PATH}/warn/anyway-admin.log.%d{yyyyMMdd}.%i</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/warn/anyway-eureka.log.%d{yyyyMMdd}.%i</fileNamePattern>
             <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
             <maxHistory>2</maxHistory><!--按天，2天-->
         </rollingPolicy>
@@ -68,7 +68,7 @@
             <onMismatch>DENY</onMismatch>
         </filter>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <fileNamePattern>${LOG_PATH}/error/anyway-admin.log.%d{yyyyMMdd}.%i</fileNamePattern>
+            <fileNamePattern>${LOG_PATH}/error/anyway-eureka.log.%d{yyyyMMdd}.%i</fileNamePattern>
             <maxFileSize>${MAX_FILE_SIZE}</maxFileSize>
             <maxHistory>2</maxHistory><!--按天，2天-->
         </rollingPolicy>
@@ -78,6 +78,7 @@
     </appender>
 
     <logger name="com.netflix" level="INFO"/>
+    <logger name="de.codecentric" level="INFO"/>
     <logger name="org.apache" level="INFO"/>
     <logger name="org.hibernate" level="INFO"/>
     <logger name="org.mybatis" level="INFO"/>
@@ -87,28 +88,30 @@
     <springProfile name="dev">
         <root level="DEBUG">
             <appender-ref ref="STDOUT"/>
-            <appender-ref ref="FILE_DEBUG"/>
-            <appender-ref ref="FILE_INFO"/>
-            <appender-ref ref="FILE_WARN"/>
-            <appender-ref ref="FILE_ERROR"/>
+            <!--<appender-ref ref="FILE_DEBUG"/>-->
+            <!--<appender-ref ref="FILE_INFO"/>-->
+            <!--<appender-ref ref="FILE_WARN"/>-->
+            <!--<appender-ref ref="FILE_ERROR"/>-->
         </root>
     </springProfile>
 
     <springProfile name="test">
         <root level="INFO">
             <appender-ref ref="STDOUT"/>
+            <!--<appender-ref ref="FILE_DEBUG"/>-->
+            <!--<appender-ref ref="FILE_INFO"/>-->
+            <!--<appender-ref ref="FILE_WARN"/>-->
+            <!--<appender-ref ref="FILE_ERROR"/>-->
         </root>
     </springProfile>
 
-    <springProfile name="prod1">
+    <springProfile name="prod">
         <root level="INFO">
             <appender-ref ref="STDOUT"/>
-        </root>
-    </springProfile>
-
-    <springProfile name="prod2">
-        <root level="INFO">
-            <appender-ref ref="STDOUT"/>
+            <!--<appender-ref ref="FILE_DEBUG"/>-->
+            <!--<appender-ref ref="FILE_INFO"/>-->
+            <!--<appender-ref ref="FILE_WARN"/>-->
+            <!--<appender-ref ref="FILE_ERROR"/>-->
         </root>
     </springProfile>
 
