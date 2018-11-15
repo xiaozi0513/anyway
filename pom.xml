@@ -5,7 +5,7 @@
 
     <groupId>com.anyway</groupId>
     <artifactId>anyway</artifactId>
-    <version>${anyway.version}</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>anyway</name>
     <description>anyway项目</description>
@@ -23,7 +23,7 @@
         <module>anyway-gateway</module>
         <module>anyway-admin</module>
         <module>anyway-monitor</module>
-        <module>anyway-monitor</module>
+        <module>anyway-config</module>
     </modules>
 
     <properties>
@@ -59,7 +59,7 @@
             <dependency>
                 <groupId>com.anyway</groupId>
                 <artifactId>anyway-common</artifactId>
-                <version>${anyway.version}</version>
+                <version>0.0.2-SNAPSHOT</version>
             </dependency>
 
             <dependency>

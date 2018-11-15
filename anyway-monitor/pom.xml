@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>anyway-monitor</artifactId>
-    <version>${anyway.version}</version>
+    <version>0.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>anyway-monitor</name>
     <description>监控模块</description>
@@ -13,7 +13,7 @@
     <parent>
         <artifactId>anyway</artifactId>
         <groupId>com.anyway</groupId>
-        <version>${anyway.version}</version>
+        <version>0.0.2-SNAPSHOT</version>
     </parent>
 
     <modules>

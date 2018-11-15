@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>anyway-gateway</artifactId>
+    <artifactId>anyway-config</artifactId>
     <version>0.0.2-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>anyway-gateway</name>
-    <description>新网关Gateway</description>
+    <name>anyway-config</name>
+    <description>配置中心</description>
 
     <parent>
         <artifactId>anyway</artifactId>
@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-gateway</artifactId>
+            <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
 
         <dependency>
@@ -28,10 +28,14 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-bus</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream-binder-rabbit</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -50,5 +54,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>
