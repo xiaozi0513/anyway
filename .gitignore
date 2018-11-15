@@ -27,3 +27,4 @@
 ### anyway ###
 **/target/
 log/
+*.xml.versionBackup
