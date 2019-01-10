@@ -1,0 +1,24 @@
+server:
+  port: 9001
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: anyway-client
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+---
+
+spring:
+  profiles: dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka/

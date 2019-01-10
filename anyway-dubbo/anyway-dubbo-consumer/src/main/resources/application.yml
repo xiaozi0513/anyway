@@ -1,0 +1,14 @@
+server:
+  port: 8011
+
+spring:
+  application:
+    name: anyway-dubbo-consumer
+
+dubbo:
+  application:
+    id: anyway-dubbo-consumer
+    name: anyway-dubbo-consumer
+  protocol:
+    name: dubbo
+    port: 12345

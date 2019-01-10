@@ -24,6 +24,9 @@
         <module>anyway-admin</module>
         <module>anyway-monitor</module>
         <module>anyway-config</module>
+        <module>anyway-client</module>
+        <module>anyway-api</module>
+        <module>anyway-dubbo</module>
     </modules>
 
     <properties>

@@ -19,6 +19,7 @@ spring:
   profiles: dev
 
 eureka:
+  environment: dev
   instance:
     hostname: localhost
   client:
@@ -33,6 +34,7 @@ spring:
   profiles: test
 
 eureka:
+  environment: test
   instance:
     hostname: localhost
   client:
@@ -49,6 +51,7 @@ spring:
   profiles: prod
 
 eureka:
+  environment: prod
   instance:
     hostname: localhost
   client:

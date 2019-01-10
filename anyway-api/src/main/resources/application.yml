@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: anyway-api
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+server:
+  port: 8006
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka/

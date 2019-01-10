@@ -21,6 +21,20 @@ spring:
             - Path=/anyway-admin/**
           filters:
             - StripPrefix=1
+        - id: anyway-api
+          uri: lb://ANYWAY-API
+          order: 0
+          predicates:
+            - Path=/anyway-api/**
+          filters:
+            - StripPrefix=1
+        - id: anyway-client
+          uri: lb://ANYWAY-CLIENT
+          order: 0
+          predicates:
+            - Path=/anyway-client/**
+          filters:
+            - StripPrefix=1
 
 management:
   endpoints:

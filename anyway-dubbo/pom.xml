@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>anyway-dubbo</artifactId>
+    <version>0.0.2-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>anyway-dubbo</name>
+    <description>dubbo服务</description>
+
+    <parent>
+        <artifactId>anyway</artifactId>
+        <groupId>com.anyway</groupId>
+        <version>0.0.2-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>anyway-dubbo-provider</module>
+        <module>anyway-dubbo-interface</module>
+        <module>anyway-dubbo-consumer</module>
+    </modules>
+
+    <properties>
+        <dubbo.version>2.6.5</dubbo.version>
+        <dubbo-boot.version>0.2.1-SNAPSHOT</dubbo-boot.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.anyway</groupId>
+                <artifactId>anyway-dubbo-interface</artifactId>
+                <version>0.0.2-SNAPSHOT</version>
+            </dependency>
+
+            <!-- Dubbo dependencies -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo</artifactId>
+                <version>${dubbo.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-boot.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>sonatype-nexus-snapshots</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+</project>

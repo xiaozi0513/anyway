@@ -1,0 +1,27 @@
+server:
+  port: 8010
+
+spring:
+  application:
+    name: anyway-dubbo-provider
+  jms:
+    template:
+      delivery-mode:
+
+dubbo:
+  application:
+    id: anyway-dubbo-provider
+    name: anyway-dubbo-provider
+    owner: wanghui
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 12345
+  registry:
+    address: N/A
+  scan:
+    base-packages: com.anyway.dubbo.provider.service
+
+demo:
+  service:
+    version: 1.0.0
