@@ -18,6 +18,12 @@ public class DemoServiceImpl implements DemoService {
 
     @Override
     public String sayHello(String name) {
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(">>>>>>>>>>>>>");
         return String.format("[%s] : Hello, %s", serviceName, name);
     }
 

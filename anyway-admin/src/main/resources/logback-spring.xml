@@ -82,10 +82,11 @@
     <logger name="org.hibernate" level="INFO"/>
     <logger name="org.mybatis" level="INFO"/>
     <logger name="org.springframework" level="INFO"/>
+    <logger name="com.anyway.admin.dao.UserMapper" level="DEBUG"/>
 
     <!--多环境-->
     <springProfile name="dev">
-        <root level="DEBUG">
+        <root level="INFO">
             <appender-ref ref="STDOUT"/>
             <!--<appender-ref ref="FILE_DEBUG"/>-->
             <!--<appender-ref ref="FILE_INFO"/>-->

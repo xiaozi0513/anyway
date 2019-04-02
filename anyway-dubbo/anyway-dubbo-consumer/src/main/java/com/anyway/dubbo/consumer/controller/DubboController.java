@@ -14,12 +14,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/dubbo")
 public class DubboController {
 
-    @Reference(version = "1.0.0", url = "dubbo://localhost:12345")
+    @Reference(version = "1.0.0", url = "dubbo://localhost:12345", timeout = 10)
     public DemoService demoService;
 
     @RequestMapping("/hello")
     public String hello(@RequestParam("name") String name) {
         return demoService.sayHello(name);
     }
+
+    public String test() {
+        return "this is a test.";
+    }
+
+
 
 }
