@@ -1,4 +1,4 @@
-package com.anyway.client.remote;
+package com.anyway.client.remote.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @date: 2018/12/29 下午3:15
  */
 @FeignClient("anyway-admin")
-public interface AnywayApiRemote {
+public interface AnywayAdminRemote {
 
     @RequestMapping(method = RequestMethod.GET, value = "/user/list")
     String listUser();

@@ -8,7 +8,7 @@ spring:
     config:
       server:
         git:
-          uri: http://github.com/xiaozi0513/anyway
+          uri: http://github.com/xiaozi0513/config-repo
           search-paths: config-repo
     bus:
       enabled: true

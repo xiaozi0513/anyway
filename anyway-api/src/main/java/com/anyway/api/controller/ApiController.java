@@ -19,4 +19,10 @@ public class ApiController {
         return "success";
     }
 
+    @RequestMapping("/say/hello")
+    public String sayHello(String name) {
+        log.info("receive info from client, name: " + name);
+        return "Hello, " + name;
+    }
+
 }

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="60 seconds" debug="false">
+    <!--上下文名称-->
+    <contextName>anyway-client</contextName>
+
+    <!--变量定义-->
+    <property name="LOG_PATH" value="./log/anyway-api"/>
+    <property name="LOG_PATTERN"
+              value="%d %5level [%15.15t] %-40.40logger{36} - %msg%n"/>
+    <property name="MAX_FILE_SIZE" value="100MB"/>
+
+    <!--控制台输出-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%cyan(%d) %highlight(%5level) %green([%15.15t]) %boldMagenta(%-40.40logger{36}) : %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--多环境-->
+    <springProfile name="dev">
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="test">
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+
+    <springProfile name="prod">
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </springProfile>
+
+</configuration>

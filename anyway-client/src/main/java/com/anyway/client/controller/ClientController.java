@@ -1,15 +1,13 @@
 package com.anyway.client.controller;
 
-import com.anyway.client.remote.AnywayApiRemote;
+import com.anyway.client.remote.feign.AnywayAdminRemote;
+import com.anyway.client.remote.feign.AnywayApiRemote;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
 
 /**
  * @author: wang_hui
@@ -20,33 +18,18 @@ import java.util.Optional;
 @RequestMapping("/client")
 public class ClientController {
     @Autowired
+    private AnywayAdminRemote anywayAdminRemote;
+    @Autowired
     private AnywayApiRemote anywayApiRemote;
 
     @RequestMapping("/user/all")
     public String getUserList() {
-        return anywayApiRemote.listUser();
-    }
-
-    public static void main(String[] args) {
-//        List<String> list = null;
-//        List<String> list1 = new LinkedList<>();
-//        List<String> list2 = new LinkedList<>();
-//        list2.add("aaa");
-//        System.out.println(CollectionUtils.isEmpty(list));
-//        System.out.println(CollectionUtils.isEmpty(list1));
-//        System.out.println(CollectionUtils.isEmpty(list2));
-        Map<String, Student> map = new HashMap<>();
-        System.out.println(map.get("b"));
-        Student student = new Student();
-        student.setName("www");
-        map.put("a", student);
-        System.out.println(Optional.ofNullable(map).map(m->m.get("a")).map(s->s.getName()).orElse("hh"));
-
+        return anywayAdminRemote.listUser();
     }
 
     @RequestMapping("/user/info")
     public String getUserInfo(@RequestParam("id") Long id) {
-        return anywayApiRemote.getUserById(id);
+        return anywayAdminRemote.getUserById(id);
     }
 
     @RequestMapping("test")
@@ -55,16 +38,10 @@ public class ClientController {
         return "success";
     }
 
-}
-
-class Student {
-    private String name;
-
-    public String getName() {
-        return name;
+    @RequestMapping(method = RequestMethod.GET, value = "/sayHello")
+    public String hello(String name) {
+        return anywayApiRemote.sayHello(name);
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 }
+

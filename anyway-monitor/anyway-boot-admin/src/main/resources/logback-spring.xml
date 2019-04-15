@@ -5,14 +5,13 @@
 
     <!--变量定义-->
     <property name="LOG_PATH" value="./log/anyway-boot-admin"/>
-    <property name="LOG_PATTERN"
-              value="%d %-5level [%15.15t] %-50.50logger{46} - %msg%n"/>
+    <property name="LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%15.15t] %-40.40logger{36} - %msg%n"/>
     <property name="MAX_FILE_SIZE" value="100MB"/>
 
     <!--控制台输出-->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%cyan(%d) %highlight(%-5level) %green([%15.15t]) %boldMagenta(%-50.50logger{46}) - %msg%n</pattern>
+            <pattern>%cyan(%d{yyyy-MM-dd HH:mm:ss.SSS}) %highlight(%-5level) %green([%15.15t]) %boldMagenta(%-40.40logger{36}) - %msg%n</pattern>
         </encoder>
     </appender>
 
