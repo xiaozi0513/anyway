@@ -2,26 +2,31 @@ server:
   port: 12000
 
 spring:
+  profiles:
+    active: dev
   application:
     name: anyway-config
-  cloud:
-    config:
-      server:
-        git:
-          uri: http://github.com/xiaozi0513/config-repo
-          search-paths: config-repo
-    bus:
-      enabled: true
-      trace:
-        enabled: true
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:10000/eureka
 
 management:
   endpoints:
     web:
       exposure:
         include: "*"
+
+---
+
+spring:
+  profiles: dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/xiaozi0513/anyway
+          search-paths: config-repo
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka
+
+

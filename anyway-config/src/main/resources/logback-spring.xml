@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
     <!--上下文名称-->
-    <contextName>anyway-client</contextName>
+    <contextName>anyway-config</contextName>
 
     <!--变量定义-->
-    <property name="LOG_PATH" value="./log/anyway-client"/>
+    <property name="LOG_PATH" value="./log/anyway-config"/>
     <property name="LOG_PATTERN"
               value="%d %5level [%15.15t] %-40.40logger{36} - %msg%n"/>
     <property name="MAX_FILE_SIZE" value="100MB"/>
