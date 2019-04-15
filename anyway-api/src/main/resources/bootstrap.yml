@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      name: test
+      uri: http://localhost:12000/
+      profile: dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:10000/eureka/

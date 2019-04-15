@@ -21,7 +21,7 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/xiaozi0513/anyway
+          uri: https://github.com/xiaozi0513/anyway.git
           search-paths: config-repo
 
 eureka:
