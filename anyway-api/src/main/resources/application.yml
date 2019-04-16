@@ -3,6 +3,14 @@ spring:
     active: dev
   application:
     name: anyway-api
+  cloud:
+    bus:
+      refresh:
+        enabled: true
+      trace:
+        enabled: true
+  kafka:
+    bootstrap-servers: localhost:9092
 
 management:
   endpoints:
