@@ -1,9 +1,13 @@
 spring:
   cloud:
     config:
+#      uri: http://localhost:12000/
       name: test
-      uri: http://localhost:12000/
       profile: dev
+      label: master
+      discovery:
+        enabled: true
+        service-id: anyway-config
 
 eureka:
   client:

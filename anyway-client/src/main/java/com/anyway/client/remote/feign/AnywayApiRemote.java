@@ -16,4 +16,7 @@ public interface AnywayApiRemote {
     @RequestMapping(method = RequestMethod.GET, value = "/say/hello")
     String sayHello(@RequestParam("name") String name);
 
+    @RequestMapping(method = RequestMethod.GET, value = "/test")
+    String test();
+
 }

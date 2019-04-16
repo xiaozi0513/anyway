@@ -34,8 +34,8 @@ public class ClientController {
 
     @RequestMapping("test")
     public String test() {
-        log.info(">>>>>>>>>>>>>>>>>>>>");
-        return "success";
+        log.info(">>>>>>>>>>>>>>>>>>");
+        return anywayApiRemote.test();
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/sayHello")

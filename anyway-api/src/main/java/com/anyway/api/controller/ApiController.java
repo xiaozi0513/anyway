@@ -2,6 +2,7 @@ package com.anyway.api.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 2019/1/8 上午10:52
  */
 @Slf4j
+@RefreshScope
 @RestController
 @RequestMapping("/api")
 public class ApiController {

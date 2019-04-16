@@ -23,6 +23,12 @@ spring:
         git:
           uri: https://github.com/xiaozi0513/anyway.git
           search-paths: config-repo
+    bus:
+      enabled: true
+  kafka:
+    bootstrap-servers: http://localhost:9092
+#    consumer:
+#      group-id: config-repo
 
 eureka:
   client:
