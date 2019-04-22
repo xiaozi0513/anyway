@@ -27,6 +27,7 @@
         <module>anyway-client</module>
         <module>anyway-api</module>
         <module>anyway-dubbo</module>
+        <module>anyway-apollo-demo</module>
     </modules>
 
     <properties>
