@@ -9,14 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author: wang_hui
  * @date: 2019/4/15 下午5:07
  */
-@FeignClient("anyway-api")
-@RequestMapping("/api")
+@FeignClient(name = "anyway-api")
 public interface AnywayApiRemote {
 
-    @RequestMapping(method = RequestMethod.GET, value = "/say/hello")
+    @RequestMapping(method = RequestMethod.GET, value = "/api/say/hello")
     String sayHello(@RequestParam("name") String name);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/test")
+    @RequestMapping(method = RequestMethod.GET, value = "/api/test")
     String test();
 
 }

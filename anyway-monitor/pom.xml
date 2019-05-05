@@ -18,6 +18,7 @@
 
     <modules>
         <module>anyway-boot-admin</module>
+        <module>hystrix-dashboard</module>
     </modules>
 
 </project>
