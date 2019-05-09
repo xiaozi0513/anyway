@@ -2,6 +2,8 @@ package com.anyway.client.controller;
 
 import com.anyway.client.remote.feign.AnywayAdminRemote;
 import com.anyway.client.remote.feign.AnywayApiRemote;
+import com.anyway.ipip.bean.LocationInfo;
+import com.anyway.ipip.util.IpLocationHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +37,8 @@ public class ClientController {
     @RequestMapping("test")
     public String test() {
         log.info(">>>>>>>>>>>>>>>>>>");
+        LocationInfo locationInfo = IpLocationHelper.getIpLocation("123.127.24.226");
+        log.info("{}", locationInfo);
         return anywayApiRemote.test();
     }
 
