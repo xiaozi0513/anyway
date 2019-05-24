@@ -17,11 +17,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.anyway</groupId>
-            <artifactId>anyway-common</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>

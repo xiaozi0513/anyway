@@ -38,10 +38,13 @@
         <anyway.version>0.0.1-SNAPSHOT</anyway.version>
         <spring-cloud.version>Finchley.SR1</spring-cloud.version>
         <boot.admin.version>2.0.4</boot.admin.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <log4j2.version>2.11.1</log4j2.version>
         <mysql.version>8.0.11</mysql.version>
         <druid.version>1.1.10</druid.version>
         <mybatis.version>1.3.2</mybatis.version>
         <pagehelper.version>1.2.7</pagehelper.version>
+        <httpclient.version>4.5.6</httpclient.version>
         <commons-lang3.version>3.8.1</commons-lang3.version>
         <fastjson.version>1.2.51</fastjson.version>
         <mapstruct.version>1.2.0.Final</mapstruct.version>
@@ -62,12 +65,14 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--### 一方库 ###-->
             <dependency>
                 <groupId>com.anyway</groupId>
                 <artifactId>anyway-common</artifactId>
                 <version>0.0.2-SNAPSHOT</version>
             </dependency>
 
+            <!--### 三方库 ###-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -76,6 +81,7 @@
                 <scope>import</scope>
             </dependency>
 
+            <!--boot admin-->
             <dependency>
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-server</artifactId>
@@ -85,6 +91,28 @@
                 <groupId>de.codecentric</groupId>
                 <artifactId>spring-boot-admin-starter-client</artifactId>
                 <version>${boot.admin.version}</version>
+            </dependency>
+
+            <!--log-->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-slf4j-impl</artifactId>
+                <version>${log4j2.version}</version>
             </dependency>
 
             <!--db-->
@@ -110,6 +138,12 @@
             </dependency>
 
             <!--tools-->
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>

@@ -3,8 +3,8 @@ package com.anyway.admin.controller;
 import com.anyway.admin.core.annotation.LogEvent;
 import com.anyway.admin.model.dto.UserDTO;
 import com.anyway.admin.service.UserService;
-import com.anyway.common.util.Query;
-import com.anyway.common.util.R;
+import com.anyway.admin.common.util.Query;
+import com.anyway.admin.common.util.R;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

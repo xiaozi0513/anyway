@@ -126,8 +126,45 @@ public class RSAUtils {
 
     /**
      * RSA私钥签名
-     * todo
+     *
+     * @param content    签名前内容
+     * @param privateKey 私钥
+     * @return 签名
      */
+    public static String signByPrivateKey(String content, String privateKey) {
+        try {
+            PrivateKey priKey = getPrivateKey(privateKey);
+            Signature signature = Signature.getInstance(Algorithms.RSA);
+            signature.initSign(priKey);
+            signature.update(content.getBytes(CHARSET));
+            byte[] signBytes = signature.sign();
+            return Base64.encodeBase64String(signBytes);
+        } catch (Exception e) {
+            log.error("rsa signature error.", e);
+        }
+        return null;
+    }
+
+    /**
+     * 签名验证
+     *
+     * @param content   签名前内容
+     * @param sign      签名
+     * @param publicKey 公钥
+     * @return
+     */
+    public static boolean verifySignByPublicKey(String content, String sign, String publicKey) {
+        try {
+            PublicKey pubKey = getPublicKey(publicKey);
+            Signature signature = Signature.getInstance(Algorithms.RSA);
+            signature.initVerify(pubKey);
+            signature.update(content.getBytes(CHARSET));
+            return signature.verify(Base64.decodeBase64(sign));
+        } catch (Exception e) {
+            log.error("rsa signature verify error.", e);
+        }
+        return false;
+    }
 
 
     /**

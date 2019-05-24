@@ -1,7 +1,7 @@
 package com.anyway.admin.service;
 
 import com.anyway.admin.model.dto.UserDTO;
-import com.anyway.common.util.Query;
+import com.anyway.admin.common.util.Query;
 
 import java.util.List;
 

@@ -27,6 +27,10 @@ public class IpipPropertyProvider {
     public IpipPropertyProvider() {
     }
 
+    /**
+     * @param filePath ip地址库路径
+     * @param interval 重新加载刷新时间间隔，单位：秒
+     */
     public IpipPropertyProvider(String filePath, int interval) {
         IpipPropertyProvider.filePath = filePath;
         IpipPropertyProvider.interval = interval;

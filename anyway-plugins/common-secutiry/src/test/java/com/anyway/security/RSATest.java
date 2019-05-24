@@ -12,5 +12,10 @@ public class RSATest {
         Pair<String, String> pair = RSAUtils.generateKeyPair();
         System.out.println("public key: " + pair.getLeft());
         System.out.println("private key: " + pair.getRight());
+        String cipherText = RSAUtils.encryptWithPrivateKey(pair.getRight(), "JKDF抗看是否kjlsd");
+        System.out.println("加密后的密文: " + cipherText);
+        String plainText = RSAUtils.decryptWithPublicKey(pair.getLeft(), cipherText);
+        System.out.println("解密后的明文：" + plainText);
+
     }
 }
